@@ -1,12 +1,14 @@
 load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
 load("@rules_rust//crate_universe:defs.bzl", "crates_vendor")
-load("@rules_rust//cargo:cargo_build_script.bzl", "cargo_build_script")
 load("@rules_rust//rust:defs.bzl",
     "rust_binary",
     "rust_clippy",
     "rust_library",
     "rustfmt_test",
     "rust_test",
+)
+load("@rules_rust//cargo:defs.bzl",
+    "cargo_build_script"
 )
 load("//crates:defs.bzl", "aliases", "all_crate_deps")
 

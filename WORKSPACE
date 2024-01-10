@@ -34,11 +34,8 @@ rules_proto_toolchains()
 
 http_archive(
     name = "rules_rust",
-    sha256 = "2f3a8181ca9d5dc2750de9a4b117539e2184c18ec40f9b6304c53df904539ffa",
-    strip_prefix = "rules_rust-51c0658415b1e31ec21dac1207a09cfe4630fc73",
-    urls = [
-        "https://github.com/bazelbuild/rules_rust/archive/51c0658415b1e31ec21dac1207a09cfe4630fc73.tar.gz",
-    ],
+    sha256 = "a761d54e49db06f863468e6bba4a13252b1bd499e8f706da65e279b3bcbc5c52",
+    urls = ["https://github.com/bazelbuild/rules_rust/releases/download/0.36.2/rules_rust-v0.36.2.tar.gz"],
 )
 
 load("@rules_rust//rust:repositories.bzl", "rules_rust_dependencies", "rust_register_toolchains")
@@ -47,7 +44,7 @@ rules_rust_dependencies()
 
 rust_register_toolchains(
     edition = "2021",
-    version = "1.63.0",
+    versions = ["1.63.0"],
 )
 
 load("@rules_rust//crate_universe:repositories.bzl", "crate_universe_dependencies")
